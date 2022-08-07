@@ -53,11 +53,11 @@ void stackFullHandler()
 }
 void reverseArray(uint16_t *inputArray, uint16_t numberOfElements, stk_T *stackStorage)
 {
-    for(uint16_t i = 0; i < TOTAL_ARRAY_SIZE; i++)
+    for(uint16_t i = 0; i < numberOfElements; i++)
     {
         stk_push(stackStorage, inputArray[i]);
     }
-    for(uint16_t i = 0; i < TOTAL_ARRAY_SIZE; i++)
+    for(uint16_t i = 0; i < numberOfElements; i++)
     {
         inputArray[i] = stk_pop(stackStorage);
     }
