@@ -3,6 +3,7 @@
 //
 
 #include "u_stack.h"
+#include <stdio.h>
 
 
 
@@ -45,14 +46,14 @@ stk_operationStatus_T stk_push(stk_T *this, STACK_DATA_TYPE element)
     }else
     {
         pd_disableIqr();
-        this->top ++;
         this->data[this->top] = element;
+        this->top ++;
         pd_enableIqr();
         return success;
     }
 }
 
-stk_operationStatus_T  stk_pop(stk_T *this)
+STACK_DATA_TYPE  stk_pop(stk_T *this)
 {
     if(stk_isEmpty(this))
     {
@@ -60,18 +61,31 @@ stk_operationStatus_T  stk_pop(stk_T *this)
         return empty;
     } else
     {
-        this->top --;
-        return success;
+        return this->data[--this->top];
     }
 }
-STACK_DATA_TYPE std_seek(stk_T *this)
+STACK_DATA_TYPE stk_peek(stk_T *this)
 {
     if(stk_isEmpty(this))
     {
         this->stackEmptyCallbackHandler();
     }
 
-    return this->data[this->top];
+    return this->data[(this->top-1)];
+
+}
+
+void stk_printlnAllElement(stk_T *this) {
+    if(stk_isEmpty(this))
+    {
+        this->stackEmptyCallbackHandler();
+        return;
+    }
+    printf("print all stack: \n");
+    for(int16_t i = (int16_t)(this->top - 1); i >= 0; i--)
+    {
+        printf("%d \t",  this->data[i]);
+    }
 
 }
 

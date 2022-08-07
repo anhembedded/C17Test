@@ -9,7 +9,7 @@
 #include "u_stdint.h"
 
 
-#define MAX_SIZE_OF_STACK 10
+#define MAX_SIZE_OF_STACK 2020
 #define STACK_EMPTY (-1)
 #define STACK_DATA_TYPE uint32_t
 
@@ -22,7 +22,6 @@
 };
 
 typedef enum stk_operationStatus stk_operationStatus_T;
-
 struct stack
 {
     uint32_t data[MAX_SIZE_OF_STACK];
@@ -30,18 +29,18 @@ struct stack
     void (*stackEmptyCallbackHandler)();
     void (*stackFullCallbackHandler)();
 };
-
-
 typedef struct stack stk_T;
-
 
 
 stk_operationStatus_T createEmptyStack(stk_T *stack_ptr, void (*EmptyHandler)(), void (*FullHandler)());
 pd_BOOL_T stk_isFull(stk_T *stack_ptr);
 pd_BOOL_T stk_isEmpty(stk_T *stack_ptr);
 stk_operationStatus_T stk_push(stk_T *this, STACK_DATA_TYPE element);
-stk_operationStatus_T  stk_pop(stk_T *this);
-STACK_DATA_TYPE std_seek(stk_T *this);
+STACK_DATA_TYPE  stk_pop(stk_T *this);
+STACK_DATA_TYPE stk_peek(stk_T *this);
+void stk_printlnAllElement(stk_T *this);
+
+
 
 
 #define stk_defaultConstructor ((stk_T){.top = empty})
