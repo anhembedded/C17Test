@@ -9,7 +9,7 @@ extern stk_T oddStack;
 extern stk_T evenStack;
 
 static pd_BOOL_T isOdd(uint16_t number);
-void array(const uint16_t inputArr1[],  int n, const uint16_t inputArr2[], int m, uint16_t arrResult[]);
+void array(const uint16_t inputArr1[],  int n, const uint16_t inputArr2[], int m, uint16_t arrResult[]); //Copy của Bích Chi
 static int fnCompare (const void *num1,const void *num2);
 void u_sortIncreasing (uint16_t *inputArray, uint16_t numberOfElements);
 pd_BOOL_T isTheSame (uint16_t first, uint16_t second);
