@@ -1,5 +1,5 @@
-#include "220805.h"
 
+#include "220805.h"
 #include <search.h>
 
 stk_T oddStack;
@@ -24,9 +24,10 @@ void array(const uint16_t inputArr1[], int n, const uint16_t inputArr2[], int m,
     }
 }
 /**
- *
+ * @brief  Compares two numbers,
  * @param  {void*} num1 :
  * @param  {void*} num2 :
+ * @note    This function aims to the qSort API.
  * @return {int}        :
  */
 static int fnCompare(const void *num1, const void *num2)
@@ -34,7 +35,7 @@ static int fnCompare(const void *num1, const void *num2)
     return ((*(uint16_t *)num1) - (*(uint16_t *)num2));
 }
 /**
- *
+ * @brief   Increasing sort elements of a array
  * @param  {uint16_t*} inputArray      :
  * @param  {uint16_t} numberOfElements :
  */
@@ -43,7 +44,7 @@ void u_sortIncreasing(uint16_t *inputArray, uint16_t numberOfElements)
     qsort(inputArray, numberOfElements, sizeof(uint16_t), fnCompare);
 }
 /**
- * @brief
+ * @brief   checking if the number is Odd
  * @param  {uint16_t} number :
  * @return {pd_BOOL_T}       :
  */
@@ -61,11 +62,10 @@ pd_BOOL_T isOdd(uint16_t number)
     return res;
 }
 /**
- * @brief
- *
- *
+ * @brief   checking if the both are the same
  * @param  {uint16_t} first  :
  * @param  {uint16_t} second :
+ * @note    This function for the sake of readability
  * @return {pd_BOOL_T}       :
  */
 pd_BOOL_T isTheSame(uint16_t first, uint16_t second)
@@ -80,13 +80,14 @@ pd_BOOL_T isTheSame(uint16_t first, uint16_t second)
     }
 }
 /**
- *
+ * @brief   Distributing elements of array into stack
  * @param  {uint16_t*} inputArray      :
  * @param  {uint16_t} numberOfElements :
  * @param  {stk_T*} oddStack_ptr       :
  * @param  {stk_T*} evenStack_ptr      :
+ * @note    Distributing elements of array into 2 stack, depending on the elements is odd or even
  */
-void oddEvenAttributeIntoStack(uint16_t *inputArray, uint16_t numberOfElements, stk_T *oddStack_ptr, stk_T *evenStack_ptr)
+void oddEvenDistributeIntoStack(uint16_t *inputArray, uint16_t numberOfElements, stk_T *oddStack_ptr, stk_T *evenStack_ptr)
 {
     for (uint16_t i = 0; i < numberOfElements; i++)
     {
@@ -101,11 +102,13 @@ void oddEvenAttributeIntoStack(uint16_t *inputArray, uint16_t numberOfElements, 
     }
 }
 /**
- *
+ * @brief  Combine those elements of 2 stacks into an array
  * @param  {uint16_t*} storeArray      :
  * @param  {uint16_t} numberOfElements :
  * @param  {stk_T*} oddStack_ptr       :
  * @param  {stk_T*} evenStack_ptr      :
+ * @note    Combine those elements of 2 stacks into an array
+ * such that odd numbers and even numbers interleaving, and decreasing order
  */
 void final(uint16_t *storeArray, uint16_t numberOfElements, stk_T *oddStack_ptr, stk_T *evenStack_ptr)
 {

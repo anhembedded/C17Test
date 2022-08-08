@@ -27,11 +27,11 @@ static inline void init()
 int main()
 {
 
-    init(); // khoi tao stack.
+    init();
 
-    array(input_array1, ARRAY_1_SIZE, input_array2, ARRAY_2_SIZE, arrResult); // Gop array
+    array(input_array1, ARRAY_1_SIZE, input_array2, ARRAY_2_SIZE, arrResult);
     u_sortIncreasing(arrResult, TOTAL_ARRAY_SIZE);
-    oddEvenAttributeIntoStack(arrResult, TOTAL_ARRAY_SIZE, &oddStack, &evenStack);
+    oddEvenDistributeIntoStack(arrResult, TOTAL_ARRAY_SIZE, &oddStack, &evenStack);
     final(arrayFinalResult, TOTAL_ARRAY_SIZE, &oddStack, &evenStack);
 
     reverseArray(arrayFinalResult, TOTAL_ARRAY_SIZE, &stack_reverseArray);
@@ -47,6 +47,14 @@ void stackFullHandler()
 {
     printf("stackFullHandler");
 }
+/**
+ * @brief  reversing the Array {1,2,3,4,5,6,7} -> {7,6,5,4,3,2,1}
+ * @param  {uint16_t*} inputArray      :
+ * @param  {uint16_t} numberOfElements :
+ * @param  {stk_T*} stackStorage       :
+ * @note    Pushing array elements into the stack, and then popping those elements back from the stack
+ *
+ */
 void reverseArray(uint16_t *inputArray, uint16_t numberOfElements, stk_T *stackStorage)
 {
     for (uint16_t i = 0; i < numberOfElements; i++)

@@ -12,7 +12,7 @@ void array(const uint16_t inputArr1[], int n, const uint16_t inputArr2[], int m,
 static int fnCompare(const void *num1, const void *num2);
 void u_sortIncreasing(uint16_t *inputArray, uint16_t numberOfElements);
 pd_BOOL_T isTheSame(uint16_t first, uint16_t second);
-void oddEvenAttributeIntoStack(uint16_t *inputArray, uint16_t numberOfElements, stk_T *oddStack_ptr, stk_T *evenStack_ptr);
+void oddEvenDistributeIntoStack(uint16_t *inputArray, uint16_t numberOfElements, stk_T *oddStack_ptr, stk_T *evenStack_ptr);
 void final(uint16_t *storeArray, uint16_t numberOfElements, stk_T *oddStack_ptr, stk_T *evenStack_ptr);
 
 #endif
