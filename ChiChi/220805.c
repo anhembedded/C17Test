@@ -27,7 +27,7 @@ void array(const uint16_t inputArr1[], int n, const uint16_t inputArr2[], int m,
  * @brief  Compares two numbers,
  * @param  {void*} num1 :
  * @param  {void*} num2 :
- * @note    This function aims to the qSort API.
+ * @note    This function aims to the qSort API's function.
  * @return {int}        :
  */
 static int fnCompare(const void *num1, const void *num2)
