@@ -5,6 +5,7 @@
 
 u_queue_T  myQueue;
 U_QUEUE_DATA_TYPE myQueueStorage [100];
+U_QUEUE_DATA_TYPE var;
 
 int main()
 {
@@ -13,6 +14,12 @@ int main()
     {
         u_queue_enqueue(&myQueue, i);
     }
+    var = u_queue_dequeue(&myQueue);
+    var = u_queue_dequeue(&myQueue);
+    var = u_queue_dequeue(&myQueue);
+    var = u_queue_dequeue(&myQueue);
+    var = u_queue_dequeue(&myQueue);
+    var = u_queue_dequeue(&myQueue);
     return 0;
 }
 

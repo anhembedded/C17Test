@@ -25,6 +25,8 @@ typedef struct u_queue u_queue_T;
 
 /* u_queue Methods */
 void u_queue_constructor(u_queue_T *queueObj_ptr,U_QUEUE_DATA_TYPE *array, uint32_t numberOfElements, void (*overLoadHandler)(),void (*underFlowHandler)());
+pd_BOOL_T u_queue_isEmpty(u_queue_T *queueObj_ptr);
+pd_BOOL_T u_queue_isFull(u_queue_T *queueObj_ptr);
 void u_queue_enqueue(u_queue_T *queueObj_ptr, U_QUEUE_DATA_TYPE data);
 U_QUEUE_DATA_TYPE u_queue_dequeue(u_queue_T *queueObj_ptr);
 U_QUEUE_DATA_TYPE u_queue_peekFirst(u_queue_T *queueObj_ptr, U_QUEUE_DATA_TYPE data);

@@ -36,5 +36,14 @@ void u_queue_enqueue(u_queue_T *queueObj_ptr, uint32_t data) {
 }
 
 U_QUEUE_DATA_TYPE u_queue_dequeue(u_queue_T *queueObj_ptr) {
-    return 0;
+    U_QUEUE_DATA_TYPE res = 0;
+    if((queueObj_ptr->front == -1)||(queueObj_ptr->front > queueObj_ptr->rear))
+    {
+        queueObj_ptr->underFlowHandler();
+    } else
+    {
+        res = queueObj_ptr->storage.array_ptr[queueObj_ptr->front];
+        queueObj_ptr->front ++;
+    }
+    return res;
 }
